@@ -1,0 +1,82 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Ask for Gemini",
+  "version": "1.3.0",
+  "description": "Right-click or press a shortcut to send any text, link, or page to Gemini, with automatic submission. Not affiliated with Google.",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://gemini.google.com/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Quick Ask for Gemini",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "description": "Open the popup"
+    },
+    "ask-page": {
+      "suggested_key": { "default": "Alt+Shift+G" },
+      "description": "Ask Gemini about this page"
+    },
+    "ask-selection": {
+      "suggested_key": { "default": "Alt+Shift+S" },
+      "description": "Ask Gemini about selected text"
+    },
+    "open-gemini": {
+      "suggested_key": { "default": "Alt+Shift+O" },
+      "description": "Open Gemini"
+    },
+    "action-1": {
+      "suggested_key": { "default": "Alt+Shift+1" },
+      "description": "Action shortcut 1"
+    },
+    "action-2": {
+      "description": "Action shortcut 2"
+    },
+    "action-3": {
+      "description": "Action shortcut 3"
+    },
+    "action-4": {
+      "description": "Action shortcut 4"
+    },
+    "action-5": {
+      "description": "Action shortcut 5"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
