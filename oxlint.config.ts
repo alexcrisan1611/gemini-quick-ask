@@ -97,7 +97,11 @@ export default defineConfig({
 		'no-negated-condition': 'off',
 		'no-warning-comments': 'off',
 		'no-inline-comments': 'off',
-		'import/no-unassigned-import': ['error', { allow: ['**/*.css'] }],
+		'require-await': 'off',
+		'import/no-unassigned-import': [
+			'error',
+			{ allow: ['**/*.css', '@total-typescript/ts-reset'] },
+		],
 
 		'max-lines': [
 			'error',
@@ -127,12 +131,18 @@ export default defineConfig({
 		'default-param-last': 'error',
 		'no-template-curly-in-string': 'error',
 		'no-new-func': 'error',
-		'no-param-reassign': ['error', { props: true }],
+		'no-param-reassign': [
+			'error',
+			{ props: true, ignorePropertyModificationsFor: ['draft'] },
+		],
 		'no-shadow': ['error', { ignoreOnInitialization: true }],
 		'no-unused-vars': ['error', { ignoreRestSiblings: true }],
 		'no-void': ['error', { allowAsStatement: true }],
 		'no-useless-assignment': 'error',
-		'new-cap': ['error', { capIsNewExceptions: ['NumberFormat'] }],
+		'new-cap': [
+			'error',
+			{ capIsNewExceptions: ['NumberFormat'], properties: false },
+		],
 		'id-denylist': [
 			'error',
 			'e',
@@ -263,7 +273,7 @@ export default defineConfig({
 		{
 			files: [
 				'lint/**',
-				'scripts/**',
+				'**/scripts/**',
 				'**/*.test.ts',
 				'**/*.test.tsx',
 				'tests/**',

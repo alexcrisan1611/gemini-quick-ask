@@ -106,5 +106,5 @@ Click the toolbar icon to open the popup. Use the links at the bottom (or right-
 ## Development
 
 - `bun lint` and `bun fmt` lint and format the code (`oxlint.config.ts`, `lint/`, `bunfig.toml`). `bun install` turns on the pre-commit hook in `.githooks/`.
-- `bunx tsc --noEmit` type checks (or `bun check` on Bun canary).
+- `bun check` type checks (Bun canary; CI runs on canary too).
 - `bun run spell` checks spelling.
