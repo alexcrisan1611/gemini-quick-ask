@@ -1,0 +1,15 @@
+[fmt]
+useTabs = true
+semi = false
+singleQuote = true
+
+[fmt.sortImports]
+groups = [
+	"type",
+	"builtin",
+	"external",
+	["internal", "subpath"],
+	["parent", "sibling", "index"],
+	"style",
+	"unknown",
+]

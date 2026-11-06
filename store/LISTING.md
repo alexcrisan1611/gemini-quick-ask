@@ -19,6 +19,7 @@ Everything to paste into the [Chrome Web Store Developer Dashboard](https://chro
 **Name** (from the manifest): Quick Ask for Gemini
 
 **Summary** (from the manifest, max 132 characters):
+
 > Right-click or press a shortcut to send any text, link, or page to Gemini, with automatic submission. Not affiliated with Google.
 
 **Category:** Tools (alternative: Productivity)
@@ -61,6 +62,7 @@ Quick Ask for Gemini is an independent extension. It isn't made by, affiliated w
 **Store icon:** `icon128.png` (128×128)
 
 **Screenshots** (1280×800, in this order):
+
 1. `store/screenshots/1-about.png`
 2. `store/screenshots/2-general.png`
 3. `store/screenshots/3-shortcuts.png`
@@ -79,23 +81,25 @@ Optional but recommended: add a screenshot of the right-click menu on a real web
 ## Privacy practices tab
 
 **Single purpose:**
+
 > Send text, links, or page addresses the user chooses to Google Gemini, and type and submit them as a prompt.
 
 **Permission justifications:**
 
-| Permission | Justification |
-|---|---|
-| `contextMenus` | Adds "Ask Gemini" items and the Actions submenu to the right-click menu. |
-| `storage` | Saves the user's settings and custom actions, and briefly holds the prompt until the Gemini tab types it in. |
-| `activeTab` | When the user presses a keyboard shortcut, reads the address of the current tab so it can be sent to Gemini. |
-| `scripting` | When the user presses a keyboard shortcut, reads the selected text on the current tab. Runs only on that tab, only when the user asks. |
-| Host permission `https://gemini.google.com/*` | Runs the content script that types the prompt into Gemini and sends it, and finds an open Gemini tab to reuse. |
+| Permission                                    | Justification                                                                                                                          |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `contextMenus`                                | Adds "Ask Gemini" items and the Actions submenu to the right-click menu.                                                               |
+| `storage`                                     | Saves the user's settings and custom actions, and briefly holds the prompt until the Gemini tab types it in.                           |
+| `activeTab`                                   | When the user presses a keyboard shortcut, reads the address of the current tab so it can be sent to Gemini.                           |
+| `scripting`                                   | When the user presses a keyboard shortcut, reads the selected text on the current tab. Runs only on that tab, only when the user asks. |
+| Host permission `https://gemini.google.com/*` | Runs the content script that types the prompt into Gemini and sends it, and finds an open Gemini tab to reuse.                         |
 
 **Remote code:** No, I am not using remote code.
 
 **Data usage:** check **Website content** (the selected text or page address the user chooses to send). Leave every other category unchecked.
 
 Then tick all three certifications:
+
 - I do not sell or transfer user data to third parties, outside of the approved use cases.
 - I do not use or transfer user data for purposes that are unrelated to my item's single purpose.
 - I do not use or transfer user data to determine creditworthiness or for lending purposes.

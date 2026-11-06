@@ -1,324 +1,470 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Quick Ask for Gemini</title>
-  <link rel="icon" href="icon32.png">
-  <link rel="stylesheet" href="ui.css">
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="brand">
-        <img src="icon48.png" alt="">
-        <span class="brand-name">Quick Ask for Gemini</span>
-      </div>
-      <nav aria-label="Settings sections">
-        <a href="#general">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
-          General
-        </a>
-        <a href="#menu">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
-          Right-click menu
-        </a>
-        <a href="#shortcuts">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
-          Shortcuts
-        </a>
-        <a href="#actions">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
-          Actions
-        </a>
-        <a href="#about">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-          About
-        </a>
-      </nav>
-    </aside>
+	<head>
+		<meta charset="utf-8" />
+		<title>Quick Ask for Gemini</title>
+		<link rel="icon" href="icon32.png" />
+		<link rel="stylesheet" href="ui.css" />
+	</head>
+	<body>
+		<div class="layout">
+			<aside class="sidebar">
+				<div class="brand">
+					<img src="icon48.png" alt="" />
+					<span class="brand-name">Quick Ask for Gemini</span>
+				</div>
+				<nav aria-label="Settings sections">
+					<a href="#general">
+						<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+							/>
+						</svg>
+						General
+					</a>
+					<a href="#menu">
+						<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+							/>
+						</svg>
+						Right-click menu
+					</a>
+					<a href="#shortcuts">
+						<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+							/>
+						</svg>
+						Shortcuts
+					</a>
+					<a href="#actions">
+						<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"
+							/>
+						</svg>
+						Actions
+					</a>
+					<a href="#about">
+						<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+							/>
+						</svg>
+						About
+					</a>
+				</nav>
+			</aside>
 
-    <main>
-      <!-- General -->
-      <section data-section="general">
-        <div class="section-head">
-          <h1>General</h1>
-          <p>How Gemini opens when you ask something.</p>
-        </div>
+			<main>
+				<!-- General -->
+				<section data-section="general">
+					<div class="section-head">
+						<h1>General</h1>
+						<p>How Gemini opens when you ask something.</p>
+					</div>
 
-        <div class="card">
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Reuse one Gemini tab</span>
-              <span class="hint">Send prompts to an open Gemini tab on your chosen account, as a new chat, instead of opening a new tab each time.</span>
-            </span>
-            <input type="checkbox" class="switch" id="reuseTab">
-          </label>
+					<div class="card">
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Reuse one Gemini tab</span>
+								<span class="hint"
+									>Send prompts to an open Gemini tab on your chosen account, as
+									a new chat, instead of opening a new tab each time.</span
+								>
+							</span>
+							<input type="checkbox" class="switch" id="reuseTab" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Send prompts automatically</span>
-              <span class="hint">Turn off to fill in the prompt box and review it before pressing Enter.</span>
-            </span>
-            <input type="checkbox" class="switch" id="autoSubmit">
-          </label>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Send prompts automatically</span>
+								<span class="hint"
+									>Turn off to fill in the prompt box and review it before
+									pressing Enter.</span
+								>
+							</span>
+							<input type="checkbox" class="switch" id="autoSubmit" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Open in background</span>
-              <span class="hint">Asks and actions open Gemini without switching to it, so you stay on the page you're reading. "Open Gemini" always switches.</span>
-            </span>
-            <input type="checkbox" class="switch" id="openInBackground">
-          </label>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Open in background</span>
+								<span class="hint"
+									>Asks and actions open Gemini without switching to it, so you
+									stay on the page you're reading. "Open Gemini" always
+									switches.</span
+								>
+							</span>
+							<input type="checkbox" class="switch" id="openInBackground" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Google account</span>
-              <span class="hint">Matches the order in Google's account switcher. If the wrong account opens after you sign out and back in, pick again.</span>
-            </span>
-            <select id="accountIndex"></select>
-          </label>
-        </div>
-      </section>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Google account</span>
+								<span class="hint"
+									>Matches the order in Google's account switcher. If the wrong
+									account opens after you sign out and back in, pick
+									again.</span
+								>
+							</span>
+							<select id="accountIndex"></select>
+						</label>
+					</div>
+				</section>
 
-      <!-- Right-click menu -->
-      <section data-section="menu">
-        <div class="section-head">
-          <h1>Right-click menu</h1>
-          <p>Choose which items appear when you right-click.</p>
-        </div>
+				<!-- Right-click menu -->
+				<section data-section="menu">
+					<div class="section-head">
+						<h1>Right-click menu</h1>
+						<p>Choose which items appear when you right-click.</p>
+					</div>
 
-        <div class="card">
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Ask Gemini about selected text</span>
-              <span class="hint">Right-click highlighted text.</span>
-            </span>
-            <input type="checkbox" class="switch" id="showAskSelection">
-          </label>
+					<div class="card">
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Ask Gemini about selected text</span>
+								<span class="hint">Right-click highlighted text.</span>
+							</span>
+							<input type="checkbox" class="switch" id="showAskSelection" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Ask Gemini about this link</span>
-              <span class="hint">Right-click a link.</span>
-            </span>
-            <input type="checkbox" class="switch" id="showAskLink">
-          </label>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Ask Gemini about this link</span>
+								<span class="hint">Right-click a link.</span>
+							</span>
+							<input type="checkbox" class="switch" id="showAskLink" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Ask Gemini about this page</span>
-              <span class="hint">Right-click empty space on a page.</span>
-            </span>
-            <input type="checkbox" class="switch" id="showAskPage">
-          </label>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Ask Gemini about this page</span>
+								<span class="hint">Right-click empty space on a page.</span>
+							</span>
+							<input type="checkbox" class="switch" id="showAskPage" />
+						</label>
 
-          <label class="row">
-            <span class="row-text">
-              <span class="row-title">Actions</span>
-              <span class="hint">A submenu on selected text and links. Use action shortcuts to run actions on a whole page.</span>
-            </span>
-            <input type="checkbox" class="switch" id="showActions">
-          </label>
-        </div>
+						<label class="row">
+							<span class="row-text">
+								<span class="row-title">Actions</span>
+								<span class="hint"
+									>A submenu on selected text and links. Use action shortcuts to
+									run actions on a whole page.</span
+								>
+							</span>
+							<input type="checkbox" class="switch" id="showActions" />
+						</label>
+					</div>
 
-        <p class="note">
-          "Ask Gemini about this page" appears directly in Chrome's menu, because it's the only item there.
-          On selected text and links, Chrome groups the items under a Quick Ask for Gemini submenu, since there's more than one.
-        </p>
-      </section>
+					<p class="note">
+						"Ask Gemini about this page" appears directly in Chrome's menu,
+						because it's the only item there. On selected text and links, Chrome
+						groups the items under a Quick Ask for Gemini submenu, since there's
+						more than one.
+					</p>
+				</section>
 
-      <!-- Shortcuts -->
-      <section data-section="shortcuts">
-        <div class="section-head">
-          <h1>Keyboard shortcuts</h1>
-          <p>Ask Gemini without touching the mouse. Shortcuts follow your General settings.</p>
-        </div>
+				<!-- Shortcuts -->
+				<section data-section="shortcuts">
+					<div class="section-head">
+						<h1>Keyboard shortcuts</h1>
+						<p>
+							Ask Gemini without touching the mouse. Shortcuts follow your
+							General settings.
+						</p>
+					</div>
 
-        <div class="group">
-          <h2>Ask and open</h2>
-          <div class="card">
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Ask Gemini about this page</span>
-                <span class="hint">Sends the address of the page you're on.</span>
-              </span>
-              <span class="keys" data-command="ask-page"></span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Ask Gemini about selected text</span>
-                <span class="hint">Uses the page instead if nothing is selected.</span>
-              </span>
-              <span class="keys" data-command="ask-selection"></span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Open Gemini</span>
-                <span class="hint">Opens Gemini, or switches to it.</span>
-              </span>
-              <span class="keys" data-command="open-gemini"></span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Open the popup</span>
-                <span class="hint">The same panel you get by clicking the toolbar icon.</span>
-              </span>
-              <span class="keys" data-command="_execute_action"></span>
-            </div>
-          </div>
-        </div>
+					<div class="group">
+						<h2>Ask and open</h2>
+						<div class="card">
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Ask Gemini about this page</span>
+									<span class="hint"
+										>Sends the address of the page you're on.</span
+									>
+								</span>
+								<span class="keys" data-command="ask-page"></span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Ask Gemini about selected text</span>
+									<span class="hint"
+										>Uses the page instead if nothing is selected.</span
+									>
+								</span>
+								<span class="keys" data-command="ask-selection"></span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Open Gemini</span>
+									<span class="hint">Opens Gemini, or switches to it.</span>
+								</span>
+								<span class="keys" data-command="open-gemini"></span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Open the popup</span>
+									<span class="hint"
+										>The same panel you get by clicking the toolbar icon.</span
+									>
+								</span>
+								<span class="keys" data-command="_execute_action"></span>
+							</div>
+						</div>
+					</div>
 
-        <div class="group">
-          <h2>Action shortcuts</h2>
-          <span class="hint">Choose which action each shortcut runs. It uses the selected text, or the page if nothing is selected.</span>
-          <div class="card" id="slotList"></div>
-        </div>
+					<div class="group">
+						<h2>Action shortcuts</h2>
+						<span class="hint"
+							>Choose which action each shortcut runs. It uses the selected
+							text, or the page if nothing is selected.</span
+						>
+						<div class="card" id="slotList"></div>
+					</div>
 
-        <div class="toolbar">
-          <button class="btn" id="changeShortcuts" type="button">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
-            Change shortcut keys
-          </button>
-          <span class="hint">Chrome manages the keys. Change them on Chrome's shortcuts page, then come back here.</span>
-        </div>
-      </section>
+					<div class="toolbar">
+						<button class="btn" id="changeShortcuts" type="button">
+							<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+								/>
+							</svg>
+							Change shortcut keys
+						</button>
+						<span class="hint"
+							>Chrome manages the keys. Change them on Chrome's shortcuts page,
+							then come back here.</span
+						>
+					</div>
+				</section>
 
-      <!-- Actions -->
-      <section data-section="actions">
-        <div class="section-head">
-          <h1>Actions</h1>
-          <p>Ready-made prompts. The selected text, link, or page address is added after your prompt.</p>
-        </div>
+				<!-- Actions -->
+				<section data-section="actions">
+					<div class="section-head">
+						<h1>Actions</h1>
+						<p>
+							Ready-made prompts. The selected text, link, or page address is
+							added after your prompt.
+						</p>
+					</div>
 
-        <div class="card" id="actionList"></div>
+					<div class="card" id="actionList"></div>
 
-        <div class="toolbar">
-          <button class="btn btn-primary" id="addAction" type="button">Add action</button>
-          <button class="btn" id="resetActions" type="button">Reset to defaults</button>
-        </div>
-      </section>
+					<div class="toolbar">
+						<button class="btn btn-primary" id="addAction" type="button">
+							Add action
+						</button>
+						<button class="btn" id="resetActions" type="button">
+							Reset to defaults
+						</button>
+					</div>
+				</section>
 
-      <!-- About -->
-      <section data-section="about">
-        <div class="card hero">
-          <img src="icon128.png" alt="">
-          <div>
-            <h1>Quick Ask for Gemini</h1>
-            <p>Send anything on the web to Gemini in one step. It opens Gemini, types your prompt, and sends it for you.</p>
-            <span class="pill" id="version"></span>
-          </div>
-        </div>
+				<!-- About -->
+				<section data-section="about">
+					<div class="card hero">
+						<img src="icon128.png" alt="" />
+						<div>
+							<h1>Quick Ask for Gemini</h1>
+							<p>
+								Send anything on the web to Gemini in one step. It opens Gemini,
+								types your prompt, and sends it for you.
+							</p>
+							<span class="pill" id="version"></span>
+						</div>
+					</div>
 
-        <div class="group">
-          <h2>What it can do</h2>
-          <div class="features">
-            <div class="card feature">
-              <div class="feature-icon">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-              </div>
-              <h3>Ask about anything</h3>
-              <p>Right-click selected text, a link, or empty space on a page. Gemini opens with your question already sent.</p>
-            </div>
+					<div class="group">
+						<h2>What it can do</h2>
+						<div class="features">
+							<div class="card feature">
+								<div class="feature-icon">
+									<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"
+										/>
+									</svg>
+								</div>
+								<h3>Ask about anything</h3>
+								<p>
+									Right-click selected text, a link, or empty space on a page.
+									Gemini opens with your question already sent.
+								</p>
+							</div>
 
-            <div class="card feature">
-              <div class="feature-icon">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
-              </div>
-              <h3>Actions</h3>
-              <p>Summarize, explain, translate, fact-check, or find counterarguments in one click. <a href="#actions">Edit them or add your own.</a></p>
-            </div>
+							<div class="card feature">
+								<div class="feature-icon">
+									<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"
+										/>
+									</svg>
+								</div>
+								<h3>Actions</h3>
+								<p>
+									Summarize, explain, translate, fact-check, or find
+									counterarguments in one click.
+									<a href="#actions">Edit them or add your own.</a>
+								</p>
+							</div>
 
-            <div class="card feature">
-              <div class="feature-icon">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
-              </div>
-              <h3>Keyboard shortcuts</h3>
-              <p>Skip the menu entirely.</p>
-              <ul>
-                <li>Ask about this page <span class="keys" data-command="ask-page"></span></li>
-                <li>Ask about selection <span class="keys" data-command="ask-selection"></span></li>
-                <li>Open Gemini <span class="keys" data-command="open-gemini"></span></li>
-              </ul>
-            </div>
+							<div class="card feature">
+								<div class="feature-icon">
+									<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+										/>
+									</svg>
+								</div>
+								<h3>Keyboard shortcuts</h3>
+								<p>Skip the menu entirely.</p>
+								<ul>
+									<li>
+										Ask about this page
+										<span class="keys" data-command="ask-page"></span>
+									</li>
+									<li>
+										Ask about selection
+										<span class="keys" data-command="ask-selection"></span>
+									</li>
+									<li>
+										Open Gemini
+										<span class="keys" data-command="open-gemini"></span>
+									</li>
+								</ul>
+							</div>
 
-            <div class="card feature">
-              <div class="feature-icon">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
-              </div>
-              <h3>Works your way</h3>
-              <p>Reuse one Gemini tab, review prompts before they're sent, stay on your page while Gemini works, and pick which Google account to use. <a href="#general">Change settings.</a></p>
-            </div>
-          </div>
-        </div>
+							<div class="card feature">
+								<div class="feature-icon">
+									<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+										/>
+									</svg>
+								</div>
+								<h3>Works your way</h3>
+								<p>
+									Reuse one Gemini tab, review prompts before they're sent, stay
+									on your page while Gemini works, and pick which Google account
+									to use. <a href="#general">Change settings.</a>
+								</p>
+							</div>
+						</div>
+					</div>
 
-        <div class="group">
-          <h2>How it works</h2>
-          <ol class="card steps">
-            <li><span>You right-click something, or press a shortcut.</span></li>
-            <li><span>Gemini opens on your chosen account, in a new tab or the one you reuse.</span></li>
-            <li><span>Your prompt is typed in and sent. You'll see a small status note in the corner while it happens.</span></li>
-          </ol>
-        </div>
+					<div class="group">
+						<h2>How it works</h2>
+						<ol class="card steps">
+							<li>
+								<span>You right-click something, or press a shortcut.</span>
+							</li>
+							<li>
+								<span
+									>Gemini opens on your chosen account, in a new tab or the one
+									you reuse.</span
+								>
+							</li>
+							<li>
+								<span
+									>Your prompt is typed in and sent. You'll see a small status
+									note in the corner while it happens.</span
+								>
+							</li>
+						</ol>
+					</div>
 
-        <div class="group">
-          <h2>Privacy</h2>
-          <p class="note">
-            Quick Ask for Gemini has no servers and collects nothing. Your settings sync through your Chrome profile.
-            Text only leaves your browser when you send it to Gemini, and Google's Gemini terms apply from there.
-            <a href="https://github.com/alexcrisan1611/gemini-quick-ask/blob/main/PRIVACY.md" target="_blank" rel="noopener">Read the privacy policy.</a>
-            <br><br>
-            Quick Ask for Gemini is an independent extension. It isn't made by, affiliated with, or endorsed by Google. Gemini is a trademark of Google LLC.
-          </p>
-        </div>
+					<div class="group">
+						<h2>Privacy</h2>
+						<p class="note">
+							Quick Ask for Gemini has no servers and collects nothing. Your
+							settings sync through your Chrome profile. Text only leaves your
+							browser when you send it to Gemini, and Google's Gemini terms
+							apply from there.
+							<a
+								href="https://github.com/alexcrisan1611/gemini-quick-ask/blob/main/PRIVACY.md"
+								target="_blank"
+								rel="noopener"
+								>Read the privacy policy.</a
+							>
+							<br /><br />
+							Quick Ask for Gemini is an independent extension. It isn't made
+							by, affiliated with, or endorsed by Google. Gemini is a trademark
+							of Google LLC.
+						</p>
+					</div>
 
-        <div class="group">
-          <h2>Permissions, explained</h2>
-          <div class="card">
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Context menus</span>
-                <span class="hint">Adds the Ask Gemini items to the right-click menu.</span>
-              </span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Storage</span>
-                <span class="hint">Saves your settings and passes your prompt to the Gemini tab.</span>
-              </span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">Active tab and scripting</span>
-                <span class="hint">When you press a shortcut, reads the selected text and address of the tab you're on. Only then, and only that tab.</span>
-              </span>
-            </div>
-            <div class="row">
-              <span class="row-text">
-                <span class="row-title">gemini.google.com</span>
-                <span class="hint">Types and sends your prompt in Gemini.</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+					<div class="group">
+						<h2>Permissions, explained</h2>
+						<div class="card">
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Context menus</span>
+									<span class="hint"
+										>Adds the Ask Gemini items to the right-click menu.</span
+									>
+								</span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Storage</span>
+									<span class="hint"
+										>Saves your settings and passes your prompt to the Gemini
+										tab.</span
+									>
+								</span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">Active tab and scripting</span>
+									<span class="hint"
+										>When you press a shortcut, reads the selected text and
+										address of the tab you're on. Only then, and only that
+										tab.</span
+									>
+								</span>
+							</div>
+							<div class="row">
+								<span class="row-text">
+									<span class="row-title">gemini.google.com</span>
+									<span class="hint"
+										>Types and sends your prompt in Gemini.</span
+									>
+								</span>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
 
-  <div class="toast" id="status" role="status"></div>
+		<div class="toast" id="status" role="status"></div>
 
-  <template id="actionTemplate">
-    <div class="action">
-      <div class="action-head">
-        <input type="text" class="title" placeholder="Menu name, e.g. Summarize" aria-label="Menu name">
-        <label class="inline-switch"><input type="checkbox" class="switch show"> Show in menu</label>
-        <button class="btn btn-text delete" type="button">Delete</button>
-      </div>
-      <textarea class="prompt" rows="2" placeholder="Prompt, e.g. Summarize this:" aria-label="Prompt"></textarea>
-    </div>
-  </template>
+		<template id="actionTemplate">
+			<div class="action">
+				<div class="action-head">
+					<input
+						type="text"
+						class="title"
+						placeholder="Menu name, e.g. Summarize"
+						aria-label="Menu name"
+					/>
+					<label class="inline-switch"
+						><input type="checkbox" class="switch show" /> Show in menu</label
+					>
+					<button class="btn btn-text delete" type="button">Delete</button>
+				</div>
+				<textarea
+					class="prompt"
+					rows="2"
+					placeholder="Prompt, e.g. Summarize this:"
+					aria-label="Prompt"
+				></textarea>
+			</div>
+		</template>
 
-  <script src="settings.js"></script>
-  <script src="ui.js"></script>
-  <script src="options.js"></script>
-</body>
+		<script src="options.js"></script>
+	</body>
 </html>

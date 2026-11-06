@@ -1,18 +1,12 @@
-# Builds the Chrome Web Store package: dist\quick-ask-for-gemini-<version>.zip
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
-$version = (Get-Content manifest.json -Raw | ConvertFrom-Json).version
-$files = @(
-  "manifest.json",
-  "background.js", "content.js", "settings.js", "ui.js", "ui.css",
-  "popup.html", "popup.js", "options.html", "options.js",
-  "icon16.png", "icon32.png", "icon48.png", "icon128.png"
-)
+bun run build
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-New-Item -ItemType Directory -Force dist | Out-Null
+$version = (Get-Content manifest.json -Raw | ConvertFrom-Json).version
 $zip = "dist\quick-ask-for-gemini-$version.zip"
 if (Test-Path $zip) { Remove-Item $zip }
 
-Compress-Archive -Path $files -DestinationPath $zip
+Compress-Archive -Path dist\extension\* -DestinationPath $zip
 Write-Output "Built $zip"

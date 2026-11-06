@@ -1,0 +1,20 @@
+{
+	"name": "quick-ask-for-gemini",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"prepare": "git config core.hooksPath .githooks",
+		"build": "bun scripts/build.ts",
+		"spell": "cspell --no-progress --no-summary \"src/**/*.ts\" \"scripts/**/*.ts\" \"*.html\" \"*.md\""
+	},
+	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.6.1",
+		"@tsconfig/strictest": "^2.0.8",
+		"@types/bun": "^1.4.4",
+		"@types/chrome": "^0.3.7",
+		"cspell": "^10.4.0",
+		"oxlint": "1.90.0",
+		"type-fest": "^5.10.0",
+		"typescript": "6.0.3"
+	}
+}

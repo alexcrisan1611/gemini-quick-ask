@@ -1,57 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="ui.css">
-</head>
-<body class="popup">
-  <header>
-    <div class="brand">
-      <img src="icon48.png" alt="">
-      <span class="brand-name">Quick Ask for Gemini</span>
-    </div>
-    <button class="icon-btn" id="openSettings" type="button" title="All settings" aria-label="All settings">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
-    </button>
-  </header>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="ui.css" />
+	</head>
+	<body class="popup">
+		<header>
+			<div class="brand">
+				<img src="icon48.png" alt="" />
+				<span class="brand-name">Quick Ask for Gemini</span>
+			</div>
+			<button
+				class="icon-btn"
+				id="openSettings"
+				type="button"
+				title="All settings"
+				aria-label="All settings"
+			>
+				<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+					<path
+						d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+					/>
+				</svg>
+			</button>
+		</header>
 
-  <button class="btn btn-primary open-btn" id="openGemini" type="button">
-    <span class="label">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
-      Open Gemini
-    </span>
-    <span class="keys" data-command="open-gemini"></span>
-  </button>
+		<button class="btn btn-primary open-btn" id="openGemini" type="button">
+			<span class="label">
+				<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+					<path
+						d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"
+					/>
+				</svg>
+				Open Gemini
+			</span>
+			<span class="keys" data-command="open-gemini"></span>
+		</button>
 
-  <div class="card">
-    <label class="row">
-      <span class="row-title">Reuse one Gemini tab</span>
-      <input type="checkbox" class="switch" id="reuseTab">
-    </label>
-    <label class="row">
-      <span class="row-title">Send prompts automatically</span>
-      <input type="checkbox" class="switch" id="autoSubmit">
-    </label>
-    <label class="row">
-      <span class="row-title">Open in background</span>
-      <input type="checkbox" class="switch" id="openInBackground">
-    </label>
-    <label class="row">
-      <span class="row-title">Google account</span>
-      <select id="accountIndex"></select>
-    </label>
-  </div>
+		<div class="card">
+			<label class="row">
+				<span class="row-title">Reuse one Gemini tab</span>
+				<input type="checkbox" class="switch" id="reuseTab" />
+			</label>
+			<label class="row">
+				<span class="row-title">Send prompts automatically</span>
+				<input type="checkbox" class="switch" id="autoSubmit" />
+			</label>
+			<label class="row">
+				<span class="row-title">Open in background</span>
+				<input type="checkbox" class="switch" id="openInBackground" />
+			</label>
+			<label class="row">
+				<span class="row-title">Google account</span>
+				<select id="accountIndex"></select>
+			</label>
+		</div>
 
-  <footer>
-    <a href="#" data-section="actions">Actions</a>
-    <a href="#" data-section="shortcuts">Shortcuts</a>
-    <a href="#" data-section="about">About</a>
-  </footer>
+		<footer>
+			<a href="#" data-section="actions">Actions</a>
+			<a href="#" data-section="shortcuts">Shortcuts</a>
+			<a href="#" data-section="about">About</a>
+		</footer>
 
-  <div class="toast" id="status" role="status"></div>
+		<div class="toast" id="status" role="status"></div>
 
-  <script src="settings.js"></script>
-  <script src="ui.js"></script>
-  <script src="popup.js"></script>
-</body>
+		<script src="popup.js"></script>
+	</body>
 </html>

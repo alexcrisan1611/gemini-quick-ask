@@ -1,0 +1,13 @@
+{
+	"version": "0.2",
+	"language": "en",
+	"ignorePaths": ["node_modules", "dist", "bun.lock", "lint"],
+	"words": [
+		"alexcrisan",
+		"bunfig",
+		"bunx",
+		"contenteditable",
+		"jsname",
+		"oklch"
+	]
+}

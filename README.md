@@ -21,18 +21,25 @@ Quick Ask for Gemini is an independent extension. It isn't made by, affiliated w
 
 ## Installation (Step-by-Step)
 
-1. Open Google Chrome.
-2. In the address bar, go to:
+1. Install [Bun](https://bun.com), then build the extension from this folder:
+   ```text
+   bun install
+   bun run build
+   ```
+2. Open Google Chrome.
+3. In the address bar, go to:
    ```text
    chrome://extensions
    ```
-3. In the top-right corner, turn **ON** the **Developer mode** toggle.
-4. Click the **Load unpacked** button in the top-left toolbar.
-5. Select this folder:
+4. In the top-right corner, turn **ON** the **Developer mode** toggle.
+5. Click the **Load unpacked** button in the top-left toolbar.
+6. Select the built folder:
    ```text
-   C:\Users\NucBox K8\Projects\gemini-quick-ask
+   C:\Users\NucBox K8\Projects\alexcrisan1611\gemini-quick-ask\dist\extension
    ```
-6. The **Quick Ask for Gemini** extension is now installed and active!
+7. The **Quick Ask for Gemini** extension is now installed and active!
+
+After changing the source, run `bun run build` again and click the reload button on the extension's card.
 
 ---
 
@@ -51,14 +58,14 @@ On selected text and links, Chrome groups the items under a **Quick Ask for Gemi
 
 ## Keyboard shortcuts
 
-| Shortcut | Default keys |
-|---|---|
-| Ask Gemini about this page | Alt+Shift+G |
-| Ask Gemini about selected text (uses the page if nothing is selected) | Alt+Shift+S |
-| Open Gemini | Alt+Shift+O |
-| Action shortcut 1 | Alt+Shift+1 |
-| Action shortcuts 2–5 | Not set |
-| Open the popup | Not set |
+| Shortcut                                                              | Default keys |
+| --------------------------------------------------------------------- | ------------ |
+| Ask Gemini about this page                                            | Alt+Shift+G  |
+| Ask Gemini about selected text (uses the page if nothing is selected) | Alt+Shift+S  |
+| Open Gemini                                                           | Alt+Shift+O  |
+| Action shortcut 1                                                     | Alt+Shift+1  |
+| Action shortcuts 2–5                                                  | Not set      |
+| Open the popup                                                        | Not set      |
 
 Change keys at `chrome://extensions/shortcuts`. Chrome only allows extensions 4 preset keys. If another extension already uses one, Chrome leaves it unset.
 
@@ -83,11 +90,21 @@ Click the toolbar icon to open the popup. Use the links at the bottom (or right-
 ## Files Included
 
 - `manifest.json` — Chrome Extension Manifest V3 configuration, including keyboard shortcuts
-- `background.js` — Background service worker managing context menus, shortcuts, and tab dispatch
-- `content.js` — Script executing on Gemini to auto-type and submit
-- `settings.js` — Default settings and built-in actions, shared by every part of the extension
-- `ui.js`, `ui.css` — Form logic, shortcut display, and styles shared by the popup and the settings page
-- `popup.html`, `popup.js` — Toolbar popup
-- `options.html`, `options.js` — Settings page, actions editor, and About page
+- `src/` — TypeScript source; `bun run build` bundles its four entry points into `dist/extension`:
+  - `src/background.ts` → `background.js` — Background service worker managing context menus, shortcuts, and tab dispatch
+  - `src/content.ts` → `content.js` — Script executing on Gemini to auto-type and submit
+  - `src/popup.ts` → `popup.js` — Toolbar popup
+  - `src/options.ts` → `options.js` — Settings page, actions editor, and About page
+  - `src/settings.ts` — Default settings and built-in actions, shared by every part of the extension
+  - `src/ui.ts` — Form logic and shortcut display shared by the popup and the settings page
+- `popup.html`, `options.html`, `ui.css` — Toolbar popup, settings page, and their shared styles
+- `scripts/build.ts` — Builds the loadable extension into `dist/extension`
+- `build.ps1` — Builds, then packages `dist/extension` as `dist\quick-ask-for-gemini-<version>.zip` for the Chrome Web Store
 - `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — Icons
 - `icon-source.png` — Full-size source image for the icons
+
+## Development
+
+- `bun lint` and `bun fmt` lint and format the code (`oxlint.config.ts`, `lint/`, `bunfig.toml`). `bun install` turns on the pre-commit hook in `.githooks/`.
+- `bunx tsc --noEmit` type checks (or `bun check` on Bun canary).
+- `bun run spell` checks spelling.
