@@ -15,7 +15,7 @@ export function showHud() {
 		bottom: '24px',
 		right: '24px',
 		zIndex: '999999',
-		backgroundColor: 'oklch(0.2006 0.0305 274.68 / 0.94)',
+		backgroundColor: 'oklch(0.2006 0.0305 220 / 0.94)',
 		color: 'oklch(1 0 0)',
 		padding: '12px 20px',
 		borderRadius: '12px',
@@ -26,7 +26,7 @@ export function showHud() {
 		display: 'flex',
 		alignItems: 'center',
 		gap: '10px',
-		border: '1px solid oklch(0.6057 0.224 285.06 / 0.4)',
+		border: '1px solid oklch(0.6057 0.099 220 / 0.4)',
 		backdropFilter: 'blur(12px)',
 		transition: 'opacity 0.4s ease, transform 0.4s ease',
 	} satisfies Partial<CSSStyleDeclaration>)

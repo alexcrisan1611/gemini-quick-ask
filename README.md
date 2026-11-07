@@ -100,8 +100,9 @@ Click the toolbar icon to open the popup. Use the links at the bottom (or right-
 - `popup.html`, `options.html`, `ui.css` — Toolbar popup, settings page, and their shared styles
 - `scripts/build.ts` — Builds the loadable extension into `dist/extension`
 - `build.ps1` — Builds, then packages `dist/extension` as `dist\quick-ask-for-gemini-<version>.zip` for the Chrome Web Store
-- `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — Icons
-- `icon-source.png` — Full-size source image for the icons
+- `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — Icons, rendered from `icon/icon.json` with the solar-enterprise-app-icon kit (the rounded icon, sRGB). Change the icon there, not in the PNGs
+- `icon-source.png` — The same icon at 1024×1024
+- `icon/` — `icon.json` (the icon's design: its Mark, hue, grid and anchors) and `icon.svg`, the icon as a vector
 
 ## Development
 
