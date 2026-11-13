@@ -1,3 +1,5 @@
+<img src="icon.svg" width="64" height="64" alt="">
+
 # Quick Ask for Gemini — Chrome Extension
 
 Right-click or press a shortcut to send any text, link, or page to Google Gemini. It opens Gemini, types your prompt, and sends it for you.
@@ -100,9 +102,8 @@ Click the toolbar icon to open the popup. Use the links at the bottom (or right-
 - `popup.html`, `options.html`, `ui.css` — Toolbar popup, settings page, and their shared styles
 - `scripts/build.ts` — Builds the loadable extension into `dist/extension`
 - `build.ps1` — Builds, then packages `dist/extension` as `dist\quick-ask-for-gemini-<version>.zip` for the Chrome Web Store
-- `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — Icons, rendered from `icon/icon.json` with the solar-enterprise-app-icon kit (the rounded icon, sRGB). Change the icon there, not in the PNGs
-- `icon-source.png` — The same icon at 1024×1024
-- `icon/` — `icon.json` (the icon's design: its Mark, hue, grid and anchors) and `icon.svg`, the icon as a vector
+- `icon.svg` — The app icon as a vector, with its design (its Mark, hue, grid and anchors) inside, for the solar-enterprise-app-icon kit
+- `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — The extension's icons, rendered from `icon.svg` (the rounded icon, sRGB). Change the icon there, not in the PNGs
 
 ## Development
 
